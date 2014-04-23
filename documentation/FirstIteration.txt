@@ -1,0 +1,119 @@
+Table of Contents:		|
+	Test Level		|
+	Camera / Viewport	|
+	Character Movement	|
+	Test Monster		|
+	Test Combat		|
+	Generate Random Level	|
+	Random Player Stats	|
+	Random Monsters		|
+	Random Items		|
+=================================
+
+---------------------------------
+|	   Test Level		|
+---------------------------------
+|Grid Based Level		|
+|	3X3 Cell		|
+|	X by X within cells	|
+|Spawn Point & Exit Point	|
+|Walls & Doors			|
+---------------------------------
+
+---------------------------------
+|	 Camera/Viewport	|
+---------------------------------
+|Centered around player		|
+|Placeholder UI			|
+|	Becomes Alpha on Moving	|
+|	Returns from alpha when	|
+|	stationary.		|
+---------------------------------
+
+---------------------------------
+|	Character Movement	|
+---------------------------------
+|Real Time			|
+|Interaction Radius		|
+|	Tap to move/interact	|
+|Movement Rectangle		|
+|	Tap & Drag to move	|
+|Update Camera to player pos.	|
+---------------------------------
+
+---------------------------------
+|	   Test Monster		|
+---------------------------------
+|AI Behavior			|
+|	Aggro Radius		|
+|	Movement		|
+|		Chase		|
+|		Wander		|
+|Stats				|
+|	Health			|
+|	Attack Damage		|
+|	Attack Speed		|
+|	Movement Speed		|
+---------------------------------
+
+---------------------------------
+|	   Test Combat		|
+---------------------------------
+|Player				|
+|	Health			|
+|	Attack Damage		|
+|	Attack Speed		|
+|Controls			|
+|	Tap to engage		|
+|Few Test Items			|
+|	Sword			|
+|	Axe			|
+|	Shield			|
+---------------------------------
+
+---------------------------------
+|	 Random Level		|
+---------------------------------
+|Random Cell Generation		|
+|	Random Walls		|
+|	Random Doors		|
+|Make Sure we can reach exit!	|
+---------------------------------
+
+---------------------------------
+|      Random Player Stats	|
+---------------------------------
+|Attack Damage			|
+|Attack Speed			|
+|Health				|
+|Evasion			|
+|Movement Speed			|
+|Luck				|
+---------------------------------
+
+---------------------------------
+|	Random Monster		|
+---------------------------------
+|Difficulty Category		|
+|	Easy - Hard		|
+|Stats				|
+|	Attack Damage		|
+|	Attack Speed		|
+|	Health			|
+|	Movement Speed		|
+|Different AI Types		|
+|	Passive			|
+|	Aggressive		|
+|	Scared/Fleeing		|
+---------------------------------
+
+---------------------------------
+|	  Random Items		|
+---------------------------------
+|Stats affect Player Stats	|
+|Different Types		|
+|	One Handed		|
+|	Two Handed		|
+|	Shield			|
+|	Dual Wielding		|
+---------------------------------
