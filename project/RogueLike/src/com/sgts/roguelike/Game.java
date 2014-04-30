@@ -1,7 +1,5 @@
 package com.sgts.roguelike;
 
-import Entity.Entity;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
