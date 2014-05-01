@@ -2,8 +2,7 @@ package com.sgts.roguelike.entity;
 
 import java.util.Hashtable;
 
-public class Entity 
-{
+public class Entity {
 	//Creates components
 	//Binds components together
 	//Manages components 
@@ -16,9 +15,8 @@ public class Entity
 	/**
 	 * Creates an Entity with default properties
 	 */
-	public Entity()
-	{
-		ID = 0;
+	public Entity(){
+		this.ID = 0;
 		componentsSize = 0;
 		components = new Hashtable<BasicComponent, Integer>();
 	}
@@ -27,8 +25,7 @@ public class Entity
 	 * Adds component to the Entity and gives that component an ID
 	 * @param component - BasicComponent type
 	 */
-	public void addComponent(BasicComponent component)
-	{
+	public void addComponent(BasicComponent component){
 		componentsSize++;
 		component.entityID = ID;
 		components.put(component, componentsSize);
@@ -38,8 +35,7 @@ public class Entity
 	 * Removes component from the Entity
 	 * @param component - BasicComponent type
 	 */
-	public void removeComponent(BasicComponent component)
-	{
+	public void removeComponent(BasicComponent component){
 		component.entityID = 0;
 		components.remove(component);
 	}
@@ -47,8 +43,7 @@ public class Entity
 	/**
 	 * Removes all components from the Entity
 	 */
-	public void removeAllComponents()
-	{
+	public void removeAllComponents(){
 		componentsSize = 0;
 		components.clear();
 	}
@@ -57,8 +52,16 @@ public class Entity
 	 * Returns Entity's ID
 	 * @return integer
 	 */
-	public int getEntityID()
-	{
+	public int getEntityID(){
 		return ID;
 	}
+	
+	/**
+	 * 
+	 */
+	public void Recycle()
+	{
+		
+	}
+	
 }
