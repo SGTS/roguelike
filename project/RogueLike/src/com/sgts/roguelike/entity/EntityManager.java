@@ -12,10 +12,12 @@ public class EntityManager {
 	 * Returns the Entity Manager instance
 	 * @return EnitityManager
 	 */	
-	public static EntityManager getInstance(){
+	public static EntityManager getInstance() {
 		if(instance == null){
 			instance = new EntityManager();
 		}
+		
+		//Class clazz = Class.forName("com.sgts.roguelike.entity.Entity");
 		
 		return instance;
 	}

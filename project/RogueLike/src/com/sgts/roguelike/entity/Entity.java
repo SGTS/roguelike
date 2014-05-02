@@ -3,31 +3,28 @@ package com.sgts.roguelike.entity;
 import java.util.Hashtable;
 
 public class Entity {
-	//Creates components
-	//Binds components together
-	//Manages components 
 	
 	int ID;
 	
-	Hashtable<BasicComponent, Integer> components;
+	Hashtable<Component, Integer> components;
 	int componentsSize;
 		
 	/**
 	 * Creates an Entity with default properties
 	 */
-	public Entity(){
+	public Entity() {
 		this.ID = 0;
 		componentsSize = 0;
-		components = new Hashtable<BasicComponent, Integer>();
+		components = new Hashtable<Component, Integer>();
 	}
 	
 	/**
 	 * Adds component to the Entity and gives that component an ID
 	 * @param component - BasicComponent type
 	 */
-	public void addComponent(BasicComponent component){
+	public void addComponent(Component component) {
 		componentsSize++;
-		component.entityID = ID;
+		component.entity = this;
 		components.put(component, componentsSize);
 	}
 	
@@ -35,33 +32,32 @@ public class Entity {
 	 * Removes component from the Entity
 	 * @param component - BasicComponent type
 	 */
-	public void removeComponent(BasicComponent component){
-		component.entityID = 0;
+	public void removeComponent(Component component) {
+		component.entity = null;
 		components.remove(component);
 	}
 	
 	/**
 	 * Removes all components from the Entity
 	 */
-	public void removeAllComponents(){
+	public void removeAllComponents() {
 		componentsSize = 0;
 		components.clear();
 	}
 	
 	/**
-	 * Returns Entity's ID
-	 * @return integer
+	 * Sets the Entity's ID
+	 * @param integer
 	 */
-	public int getEntityID(){
-		return ID;
+	public void setEntityID(int id) {
+		ID = id;
 	}
 	
 	/**
-	 * 
+	 * Returns the Entity's ID
+	 * @return integer
 	 */
-	public void Recycle()
-	{
-		
-	}
-	
+	public int getEntityID() {
+		return ID;
+	}	
 }
