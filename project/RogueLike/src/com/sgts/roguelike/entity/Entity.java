@@ -1,5 +1,6 @@
 package com.sgts.roguelike.entity;
 
+import java.lang.reflect.Constructor;
 import java.util.Hashtable;
 
 public class Entity {
@@ -7,16 +8,29 @@ public class Entity {
 	int ID;
 	
 	Hashtable<Component, Integer> components;
-	int componentsSize;
+	int componentsSize;	
+	
+	public static Entity createEntity() {
+		Class<? extends Entity> entityClass = Entity.class;
+		Constructor<?>[] entityConstructor = entityClass.getConstructors();
+		Entity entity = null;
 		
+		try {
+			entity = (Entity) entityConstructor[0].newInstance();
+		} catch (Exception exception) {
+			// TODO generate catch block
+		}
+		
+		return entity;
+	}
+	
 	/**
 	 * Creates an Entity with default properties
 	 */
-	public Entity() {
+	private Entity() {
 		this.ID = 0;
 		componentsSize = 0;
-		components = new Hashtable<Component, Integer>();
-	}
+		components = new Hashtable<Component, Integer>();	}
 	
 	/**
 	 * Adds component to the Entity and gives that component an ID
