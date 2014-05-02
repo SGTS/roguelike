@@ -1,5 +1,6 @@
 package com.sgts.roguelike.level;
 
+import com.google.gson.Gson;
 import com.sgts.roguelike.level.Map;
 import com.sgts.roguelike.level.Room;
 
@@ -21,8 +22,16 @@ public class MapGenerator {
 		// TODO: implement
 		
 		
-		
 		return map;
 	}
 	
+	/**
+	 * Load a map object from a json string
+	 * @param json the json string that contains the map data
+	 * @return the loaded map object
+	 */
+	public static Map LoadMap(String json) {
+		Gson gson = new Gson();
+		return gson.fromJson(json, Map.class);		
+	}
 }
