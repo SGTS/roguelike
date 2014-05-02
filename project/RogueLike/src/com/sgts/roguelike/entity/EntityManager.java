@@ -1,5 +1,10 @@
 package com.sgts.roguelike.entity;
 
+/**
+ * 
+ * @author csaavedra
+ *
+ */
 public class EntityManager {
 	private static EntityManager instance = null;
 	
@@ -15,10 +20,8 @@ public class EntityManager {
 	public static EntityManager getInstance() {
 		if(instance == null){
 			instance = new EntityManager();
-		}
-		
-		//Class clazz = Class.forName("com.sgts.roguelike.entity.Entity");
-		
+		}	
+				
 		return instance;
 	}
 	
