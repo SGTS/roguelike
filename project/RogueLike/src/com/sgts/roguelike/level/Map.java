@@ -1,5 +1,6 @@
 package com.sgts.roguelike.level;
 
+import com.sgts.roguelike.entity.Component;
 import com.sgts.roguelike.entity.ComponentManager;
 import com.sgts.roguelike.level.Cell;
 import com.badlogic.gdx.math.Vector2;
@@ -117,5 +118,15 @@ public class Map extends ComponentManager {
 	public String serialize() {
 		Gson gson = new Gson();
 		return gson.toJson(this);
+	}
+	@Override
+	public Component[] getComponents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void Update() {
+		// TODO Auto-generated method stub
+		
 	}
 }
