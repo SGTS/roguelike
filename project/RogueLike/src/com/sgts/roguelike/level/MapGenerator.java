@@ -2,7 +2,6 @@ package com.sgts.roguelike.level;
 
 import com.google.gson.Gson;
 import com.sgts.roguelike.level.Map;
-import com.sgts.roguelike.level.Room;
 
 /**
  * Class that generates {@link com.sgts.roguelike.level.Map maps} based on input parameters

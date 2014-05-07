@@ -1,6 +1,5 @@
 package com.sgts.roguelike.level;
 
-
-public class Room {
+public class Cell {
 
 }
