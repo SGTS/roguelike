@@ -19,8 +19,7 @@ public abstract class ComponentManager {
 		
 		for(ComponentManager cm : managers) {
 			cm.Update();
-		}
-		
+		}		
 	}
 	
 	public static void Shutdown() {
@@ -41,6 +40,8 @@ public abstract class ComponentManager {
 	}
 	
 	// TODO: restructure and implement. these don't need to be abstract.
-	public abstract Component[] getComponents();
+	public static List<ComponentManager> getComponents(){
+		return managers;
+	}
 	public abstract void Update();	
 }

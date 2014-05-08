@@ -1,5 +1,7 @@
 package com.sgts.roguelike.level;
 
+import java.util.List;
+
 import com.sgts.roguelike.entity.Component;
 import com.sgts.roguelike.entity.ComponentManager;
 import com.sgts.roguelike.level.Cell;
@@ -119,8 +121,8 @@ public class Map extends ComponentManager {
 		Gson gson = new Gson();
 		return gson.toJson(this);
 	}
-	@Override
-	public Component[] getComponents() {
+	
+	public static List<ComponentManager> getComponents() {
 		// TODO Auto-generated method stub
 		return null;
 	}

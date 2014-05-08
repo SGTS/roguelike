@@ -17,6 +17,7 @@ public abstract class Component {
 	 * Creates an instance of the Component class
 	 * @return Component
 	 */
+	
 	public static Component createComponent() {
 		Class<Component> componenetClass = Component.class;
 		Constructor<?>[] componenetConstructor = componenetClass.getConstructors();
