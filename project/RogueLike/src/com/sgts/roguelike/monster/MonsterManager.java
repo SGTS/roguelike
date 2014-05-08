@@ -1,11 +1,8 @@
 package com.sgts.roguelike.monster;
 
-import java.util.Random;
-
 import com.sgts.roguelike.components.Movement;
 import com.sgts.roguelike.components.Renderable;
 import com.sgts.roguelike.components.Stat;
-import com.sgts.roguelike.entity.Component;
 import com.sgts.roguelike.entity.Entity;
 
 /**
@@ -17,14 +14,13 @@ import com.sgts.roguelike.entity.Entity;
  *
  */
 
-public class MonsterGenerator {
+public class MonsterManager {
 
 	//Variables
 	private Entity monster = null;
-	private Random gen = new Random();
 	
 	//Constructor
-	public MonsterGenerator() {
+	public MonsterManager() {
 		this.monster = Entity.createEntity();
 		this.monster.addComponent(Renderable.createComponent());
 		this.monster.addComponent(Stat.createComponent());
