@@ -2,7 +2,7 @@ package com.sgts.roguelike.entity;
 
 /**
  * 
- * @author csaavedra
+ * @author Carlos Saavedra
  *
  */
 public class EntityManager {
