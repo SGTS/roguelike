@@ -14,7 +14,7 @@ public abstract class Component {
 	Entity entity;
 	
 	/**
-	 * 
+	 * Creates an instance of the Component class
 	 * @return Component
 	 */
 	public static Component createComponent() {
