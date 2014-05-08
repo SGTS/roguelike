@@ -1,5 +1,9 @@
 package com.sgts.roguelike.components;
 
+import java.lang.reflect.Constructor;
+
+import javax.swing.JOptionPane;
+
 import com.sgts.roguelike.entity.Component;
 /**
  * 
@@ -48,6 +52,24 @@ public class Stat extends Component {
 	}
 	public void setLuck(int luck) {
 		this.luck = luck;
+	}
+	
+	/**
+	 * Creates an instance of the Component class
+	 * @return Component
+	 */	
+	public static Component createComponent() {
+		Class<Stat> componenetClass = Stat.class;
+		Constructor<?>[] componenetConstructor = componenetClass.getConstructors();
+		Stat component = null;
+		
+		try {
+			component = (Stat) componenetConstructor[0].newInstance();
+		} catch (Exception exception) {
+			JOptionPane.showMessageDialog(null, "Cannot create an Component", "Warning", JOptionPane.WARNING_MESSAGE);
+		}
+		
+		return component;
 	}
 	
 	//Overridden Functions

@@ -1,5 +1,9 @@
 package com.sgts.roguelike.components;
 
+import java.lang.reflect.Constructor;
+
+import javax.swing.JOptionPane;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.sgts.roguelike.entity.Component;
 
@@ -40,6 +44,24 @@ public class Renderable extends Component {
 
 	public void setHeight(int Height) {
 		this.height = Height;
+	}
+	
+	/**
+	 * Creates an instance of the Component class
+	 * @return Component
+	 */	
+	public static Component createComponent() {
+		Class<Renderable> componenetClass = Renderable.class;
+		Constructor<?>[] componenetConstructor = componenetClass.getConstructors();
+		Renderable component = null;
+		
+		try {
+			component = (Renderable) componenetConstructor[0].newInstance();
+		} catch (Exception exception) {
+			JOptionPane.showMessageDialog(null, "Cannot create an Component", "Warning", JOptionPane.WARNING_MESSAGE);
+		}
+		
+		return component;
 	}
 	
 	//Overridden functions

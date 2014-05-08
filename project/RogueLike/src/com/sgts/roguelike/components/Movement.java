@@ -1,5 +1,9 @@
 package com.sgts.roguelike.components;
 
+import java.lang.reflect.Constructor;
+
+import javax.swing.JOptionPane;
+
 import com.badlogic.gdx.math.Vector2;
 import com.sgts.roguelike.entity.Component;
 /**
@@ -26,6 +30,24 @@ public class Movement extends Component {
 	}
 	public void setVelocity(Vector2 velocity) {
 		this.velocity = velocity;
+	}
+	
+	/**
+	 * Creates an instance of the Movement class
+	 * @return Component
+	 */	
+	public static Component createComponent() {
+		Class<Movement> componenetClass = Movement.class;
+		Constructor<?>[] componenetConstructor = componenetClass.getConstructors();
+		Movement component = null;
+		
+		try {
+			component = (Movement) componenetConstructor[0].newInstance();
+		} catch (Exception exception) {
+			JOptionPane.showMessageDialog(null, "Cannot create an Component", "Warning", JOptionPane.WARNING_MESSAGE);
+		}
+		
+		return component;
 	}
 	
 	//Overridden functions

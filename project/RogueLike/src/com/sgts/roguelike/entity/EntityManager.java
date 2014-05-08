@@ -25,5 +25,4 @@ public class EntityManager {
 		return instance;
 	}
 	
-	//private Entity
 }
