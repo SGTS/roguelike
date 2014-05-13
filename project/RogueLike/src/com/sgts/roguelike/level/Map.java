@@ -2,7 +2,6 @@ package com.sgts.roguelike.level;
 
 import java.util.List;
 
-import com.sgts.roguelike.entity.Component;
 import com.sgts.roguelike.entity.ComponentManager;
 import com.sgts.roguelike.level.Cell;
 import com.badlogic.gdx.math.Vector2;

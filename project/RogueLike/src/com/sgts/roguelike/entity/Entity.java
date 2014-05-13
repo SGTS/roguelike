@@ -1,9 +1,7 @@
 package com.sgts.roguelike.entity;
 
-import java.lang.reflect.Constructor;
 import java.util.Hashtable;
 
-import javax.swing.JOptionPane;
 /**
  * Class that creates an Object that keeps track of the components
  * @author Carlos Saavedra
@@ -15,24 +13,6 @@ public class Entity {
 	
 	Hashtable<Component, Integer> components;
 	int componentsSize;	
-	
-	/**
-	 * Creates an instance of the Entity class
-	 * @return
-	 */
-	public static Entity createEntity() {
-		Class<? extends Entity> entityClass = Entity.class;
-		Constructor<?>[] entityConstructor = entityClass.getConstructors();
-		Entity entity = null;
-		
-		try {
-			entity = (Entity) entityConstructor[0].newInstance();
-		} catch (Exception exception) {
-			JOptionPane.showMessageDialog(null, "Cannot create an Entity", "Warning", JOptionPane.WARNING_MESSAGE);
-		}
-		
-		return entity;
-	}
 	
 	/**
 	 * Creates an Entity with default properties
