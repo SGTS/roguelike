@@ -1,7 +1,5 @@
 package com.sgts.roguelike.monster;
 
-import java.util.Random;
-
 import com.sgts.roguelike.components.Movement;
 import com.sgts.roguelike.components.Renderable;
 import com.sgts.roguelike.components.Stat;
@@ -12,8 +10,8 @@ import com.sgts.roguelike.entity.EntityManager;
  * 
  * @author Daniel
  * This class is to be used to generate monsters with unique stats.
- * The constructor is to be called first to initialize the variables before it calls a random generation.
- * Finally a monster will be returned for use.
+ * The constructor not used.
+ * Each function past the constructor returns a monster, each being different depending on the function used.
  *
  */
 
@@ -37,16 +35,23 @@ public class MonsterManager {
 		
 	}
 	
+	//Returns a randomized monster with [currently] default picture
 	public Entity createRandomMonster() {
-		
-		Random rand = new Random();
+
 		Entity monster = EntityManager.createEntity();
 		
-		monster.addComponent(Renderable.createComponent());
-		monster.addComponent(Stat.createComponent());
-		monster.addComponent(Movement.createComponent());
+		Stat s = new Stat();
+		s.setAttackDamage((int)(Math.random() * 10));
+		s.setAttackSpeed((float)(Math.random() * 2));
+		s.setHealth((int)(Math.random() * 100));
+		s.setMovementSpeed((int)(Math.random() * 5));
+		s.setLuck(0);
+		Movement m = new Movement();
+		m.setMovementSpeed(s.getMovementSpeed());
 		
-		//Add random stats to the monster
+		monster.addComponent(Renderable.createComponent());
+		monster.addComponent(s);
+		monster.addComponent(m);
 		
 		return monster;
 		
