@@ -2,7 +2,7 @@ package com.sgts.roguelike.level;
 
 import java.util.List;
 
-import com.sgts.roguelike.entity.ComponentManager;
+import com.sgts.roguelike.entity.Component;
 import com.sgts.roguelike.level.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.google.gson.Gson;
@@ -14,7 +14,7 @@ import com.google.gson.Gson;
  * @author Kevin Teynor
  * 
  */
-public class Map extends ComponentManager {
+public class Map extends Component {
 	
 	protected int width;
 	protected int height;
@@ -119,15 +119,5 @@ public class Map extends ComponentManager {
 	public String serialize() {
 		Gson gson = new Gson();
 		return gson.toJson(this);
-	}
-	
-	public static List<ComponentManager> getComponents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public void Update() {
-		// TODO Auto-generated method stub
-		
 	}
 }

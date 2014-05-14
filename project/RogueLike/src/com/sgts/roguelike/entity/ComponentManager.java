@@ -3,7 +3,7 @@ package com.sgts.roguelike.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ComponentManager {
+public abstract class ComponentManager<E extends Component> {
 	
 	/**
 	 * Collection that stores all instantiated ComponentManagers,
@@ -22,11 +22,26 @@ public abstract class ComponentManager {
 		}		
 	}
 	
+	/**
+	 * Get the container list of all component managers
+	 * @return the list of all ComponentManagers
+	 */
+	public static List<ComponentManager> GetComponentManagers(){
+		return managers;
+	}
+	
+	/**
+	 * Shuts down all component managers
+	 */
 	public static void Shutdown() {
 		
 		// TODO: shutdown all the components and component managers
 		
 	}
+	
+	
+	// --------------------------------------------------------
+	
 	
 	/**
 	 * Base constructor for ComponentManager class.
@@ -39,9 +54,18 @@ public abstract class ComponentManager {
 		}
 	}
 	
-	// TODO: restructure and implement. these don't need to be abstract.
-	public static List<ComponentManager> getComponents(){
-		return managers;
-	}
-	public abstract void Update();	
+	/**
+	 * Update gets called every game loop for each ComponentManager
+	 * This is where the behavior for the components is defined. The component itself
+	 * should only be a collection of data, that the manager can use however it needs to.
+	 * TODO: Implement a priority for order of updates for different component types.
+	 */
+	public abstract void Update();
+	
+	/**
+	 * Get a reference to a blank (ready-to-be-used) component inside the component manager.
+	 * This system allows for easy implementation of object pooling if desired. 
+	 * @return a defaulted component that is a member of the ComponentManager's collection of components.  
+	 */
+	public abstract E GenerateComponent();
 }
